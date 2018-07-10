@@ -13,9 +13,10 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Entity\User::class, function (Faker $faker) {
+$factory->define(App\Entity\Money::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'amount' => $faker->randomFloat(2,0,100000),
+        'currency_id' => 1,
+        'wallet_id' => 1,
     ];
 });
